@@ -67,7 +67,7 @@
             <tag name="console.command" />
         </service>
 
-        <service id="Meilisearch\Bundle\Services\UnixTimestampNormalizer">
+        <service id="Meilisearch\Bundle\Services\UnixTimestampIntegerNormalizer">
             <tag name="serializer.normalizer" />
         </service>
     </services>

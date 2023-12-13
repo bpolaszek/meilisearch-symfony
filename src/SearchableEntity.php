@@ -7,6 +7,7 @@ namespace Meilisearch\Bundle;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -61,7 +62,7 @@ final class SearchableEntity
     public function getSearchableArray(): array
     {
         $context = [
-            'meilisearch' => true,
+            DateTimeNormalizer::FORMAT_KEY => 'U',
             'fieldsMapping' => $this->entityMetadata->fieldMappings,
         ];
 
